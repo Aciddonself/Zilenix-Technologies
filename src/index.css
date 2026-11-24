@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&family=Public+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  font-family: 'Public Sans', system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-pine-50: #f2f7f3;
+  --color-pine-100: #e0ebe3;
+  --color-pine-200: #c2d7c9;
+  --color-pine-300: #97bca6;
+  --color-pine-400: #6b9d80;
+  --color-pine-500: #4a7f62;
+  --color-pine-600: #37654d;
+  --color-pine-700: #2d5140;
+  --color-pine-800: #264134;
+  --color-pine-900: #16281f;
+  --color-pine-950: #0c211a;
+  --color-amber-glow: #f2b53a;
+  --color-amber-deep: #d99a1f;
+  --color-paper: #faf7ef;
+  --color-paper-dim: #f1ede1;
+  --color-night: #0b1510;
+  --color-night-soft: #111f18;
+  --color-night-card: #15241c;
+  --color-night-line: #23382d;
+  --color-success: #1f9d63;
+  --color-danger: #d64545;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-sans: 'Public Sans', system-ui, sans-serif;
+  --font-tagline: 'Cinzel', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --shadow-card: 0 1px 2px rgb(12 33 26 / 6%), 0 8px 24px rgb(12 33 26 / 8%);
+  --shadow-lift: 0 2px 4px rgb(12 33 26 / 8%), 0 16px 48px rgb(12 33 26 / 16%);
+  --shadow-glow: 0 0 0 1px rgb(242 181 58 / 35%), 0 8px 40px rgb(242 181 58 / 22%);
+  --navy: var(--color-pine-950);
+  --blue: var(--color-pine-700);
+  --teal: var(--color-pine-600);
+  --gold: var(--color-amber-glow);
+  --bg: var(--color-paper);
+  --bg-peach: var(--color-paper-dim);
+  --hero-bg: var(--color-pine-950);
+  --hero-foreground: var(--color-paper);
+  --hero-muted: var(--color-pine-200);
+  --ink: #16281f;
+  --muted: #4a5c50;
+  --line: rgb(22 40 31 / 13%);
+  --card: rgb(255 255 255 / 78%);
+  --surface-raised: rgb(255 255 255 / 84%);
+  --focus: var(--color-amber-glow);
+  --radius: 18px;
+  --shadow-soft: var(--shadow-card);
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --navy: var(--color-night);
+  --bg: var(--color-night);
+  --bg-peach: var(--color-night-soft);
+  --hero-bg: var(--color-pine-950);
+  --hero-foreground: #e8e6da;
+  --hero-muted: var(--color-pine-200);
+  --ink: #e8e6da;
+  --muted: #b1bfb5;
+  --line: var(--color-night-line);
+  --card: rgb(21 36 28 / 78%);
+  --surface-raised: var(--color-night-card);
+  --focus: var(--color-amber-glow);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 22%), 0 12px 32px rgb(0 0 0 / 20%);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 135px; }
+body {
+  min-width: 320px;
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--line) .7px, transparent .7px), radial-gradient(ellipse at 7% 0%, rgb(242 181 58 / 8%), transparent 32rem), radial-gradient(ellipse at 92% 18%, rgb(74 127 98 / 8%), transparent 38rem);
+  background-size: 22px 22px, auto, auto;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+::selection { color: #241a05; background: var(--color-amber-glow); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
