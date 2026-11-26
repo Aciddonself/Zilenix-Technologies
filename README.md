@@ -17,5 +17,10 @@ Public phone, WhatsApp, email, and address values are intentionally blank until 
 ## Updating content
 Sign into `/admin` using a Supabase email/password account when running against a configured backend. Enquiries are visible in the dashboard. The API exposes editable resources for services, industries, FAQs, counters, testimonials, projects, and the ZILENIX knowledge base through `/api/admin-content?table=...`; connect the same authenticated pattern to additional CMS forms as the admin team expands.
 
+### Database setup
+The initial schema and starter service, industry, FAQ, and assistant knowledge content are in `supabase/migrations/20261126120000_initial_zilenix_schema.sql`. Apply this migration to the connected Supabase project before expecting production content, enquiries, project management, or admin data to work. It creates missing tables without replacing existing records and enables row-level security; the server API uses the Supabase secret key for database access.
+
+If Supabase GitHub production migrations are enabled for the `main` branch, merge this migration there to apply it. Otherwise, run the SQL file once in the Supabase SQL Editor. Do not expose the server secret in the browser or commit it to this repository.
+
 ## ZILENIX
 ZILENIX intentionally handles only company questions, avoids prices, and captures enquiries through `/api/zilenix`. Update grounded question/answer content in the `knowledge_base` table. To connect a model later, call it only server-side in `api/zilenix.js`, with a server environment key; never expose it in Vite.
